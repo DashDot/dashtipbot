@@ -1,14 +1,13 @@
-# It's dogetipbot!
+# Reddit Dashtipbot
 
 ## Introduction
 
-dogetipbot is a fork of vindimy's ALTcointip bot, found at __https://github.com/vindimy/altcointip__
+Dashtipbot is a fork of Josh Mohland's dogetipbot, found at __https://github.com/mohland/dogetipbot__
+which is a fork of vindimy's ALTcointip bot, found at __https://github.com/vindimy/altcointip__
 
-This is the version that's currently running on reddit at __http://www.reddit.com/r/dogetipbot/wiki/index__ 
+This is the version that's currently running on reddit at __http://www.reddit.com/r/dashtipbot/wiki/index__ 
 
-v2 is being developed, but this is stable (for now). only minor patches will be added on to this repo as bugs are squashed.
-
-note that this bot only accepts dogecoins.
+Note that this bot only accepts Dash.
 
 The instructions below are from ALTcointip, but the instructions are the same. Cheers!
 
@@ -32,7 +31,7 @@ Create a new MySQL database instance and run included SQL file [altcointip.sql](
 
 ### Coin Daemons
 
-Download one or more coin daemon executable. Create a configuration file for it in appropriate directory (such as `~/.dogecoin/dogecoin.conf` for Dogecoin), specifying `rpcuser`, `rpcpassword`, `rpcport`, and `server=1`, then start the daemon. It will take some time for the daemon to download the blockchain, after which you should verify that it's accepting commands (such as `dogecoind getinfo` and `dogecoind listaccounts`).
+Download one or more coin daemon executable. Create a configuration file for it in appropriate directory (such as `~/.dash/dash.conf` for Dash), specifying `rpcuser`, `rpcpassword`, `rpcport`, and `server=1`, then start the daemon. It will take some time for the daemon to download the blockchain, after which you should verify that it's accepting commands (such as `dashd getinfo` and `dashd listaccounts`).
 
 ### Reddit Account
 

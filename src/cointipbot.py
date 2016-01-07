@@ -144,7 +144,7 @@ class CointipBot(object):
             actions = ctb_action.get_actions(atype='givetip', state='pending', coin=c, ctb=self)
             for a in actions:
                 pending_tips += a.coinval
-            if (ctb_balance - pending_tips) < -0.000001:
+            if (ctb_balance - pending_tips) < -0.001:
                 raise Exception("CointipBot::self_checks(): CointipBot's %s balance (%s) < total pending tips (%s)" % (c.upper(), ctb_balance, pending_tips))
 
         # Ensure coin balances are positive
@@ -251,7 +251,7 @@ class CointipBot(object):
                 # Mark message as read
                 ctb_misc.praw_call(m.mark_as_read)
 
-        except (HTTPError, ConnectionError, Timeout, RateLimitExceeded, timeout) as e:
+        except (praw.errors.HTTPException, HTTPError, ConnectionError, Timeout, RateLimitExceeded, timeout) as e:
             lg.warning("CointipBot::check_inbox(): Reddit is down (%s), sleeping", e)
             time.sleep(self.conf.misc.times.sleep_seconds)
             pass
